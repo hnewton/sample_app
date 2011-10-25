@@ -22,23 +22,28 @@ describe "LayoutLinks" do
     response.should have_selector('title', :content => "Help")
   end
   
-  # it "should have a Sign up page at '/signup'" do
-  #   get '/signup'
-  #   response.should have_selector('title', :content => "Signup")
-  # end
+  it "should have a sign up page at '/signup'" do
+    get '/signup'
+    response.should have_selector('title', :content => "Signup")
+  end
   
-  # it "should have the right links in the layout"
-  #   visit root_path
-  #   response.should have_selector('title', :content => "Home")
-  #   click link "About"
-  #   response.should have_selector('title', :content => "About")
-  #   click link "Contact"
-  #   response.should have_selector('title', :content => "Contact")
-  #   click link "Help"
-  #   response.should have_selector('title', :content => "Help")
-  #   click link "Sign up now!"
-  #   response.should have_selector('title', :content => "Sign up")
-  #   response.should have_selector('a[href="/"]>img')  
-  # end
+  it "should have a signin page at '/signin'" do
+    get '/signin'
+    response.should have_selector('title', :content => "Sign in")
+  end
+  
+  it "should have the right links in the layout"
+    visit root_path
+    response.should have_selector('title', :content => "Home")
+    click link "About"
+    response.should have_selector('title', :content => "About")
+    click link "Contact"
+    response.should have_selector('title', :content => "Contact")
+    click link "Help"
+    response.should have_selector('title', :content => "Help")
+    click link "Sign up now!"
+    response.should have_selector('title', :content => "Sign up")
+    response.should have_selector('a[href="/"]>img')  
+  end
   
 end
